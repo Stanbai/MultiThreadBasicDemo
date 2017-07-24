@@ -12,6 +12,7 @@ enum DemoType : Int{
     case basic
     case priority
     case dependency
+    case collection
 }
 
 
@@ -44,8 +45,10 @@ class BasicDemosVC: UIViewController {
         case .dependency :
             self.title = "Dependency Demo"
             break
+        default :
+            break
         }
-        
+
     }
     
     override func viewDidLoad() {
@@ -70,6 +73,9 @@ class BasicDemosVC: UIViewController {
             break
         case .dependency :
             startDepencyDemo()
+            break
+        default :
+            break
         }
     }
     
@@ -159,10 +165,27 @@ extension BasicDemosVC {
     fileprivate func startDepencyDemo() {
        operationQueue.maxConcurrentOperationCount = 4
         self.activityIndicator.startAnimating()
+        guard let url = URL(string: "https://placebeard.it/355/140") else {return }
+        let op1 = convenienceOperation(setImageView: imageView1, withURL: url)
+        let op2 = convenienceOperation(setImageView: imageView2, withURL: url)
+        op2.addDependency(op1)
+        let op3 = convenienceOperation(setImageView: imageView3, withURL: url)
+        op3.addDependency(op2)
+        let op4 = convenienceOperation(setImageView: imageView4, withURL: url)
+        op4.addDependency(op3)
         
-        
+        DispatchQueue.global().async {
+            [weak self] in
+            self?.operationQueue.addOperations([op1,op2,op3,op4], waitUntilFinished: true)
+            DispatchQueue.main.async {
+                self?.activityIndicator.stopAnimating()
+            }
+        }
+   
     }
 }
+
+
 
 class convenienceOperation: Operation {
     let url: URL
