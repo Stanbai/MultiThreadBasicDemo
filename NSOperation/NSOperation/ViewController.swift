@@ -12,10 +12,33 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        basicOperation()
-        CreatBasicBlockOperation()
+//        basicOperation()
+//        CreatBasicBlockOperation()
+        
+        let testNumberArray = [1,2,3,4,5,6,7,8,9]
+        print("没有使用map之前的打印结果:\(testNumberArray)")
+        
+        let newArray = testNumberArray.map{$0 + 2}
+        print("newArray的打印结果:\(newArray)")
+
+        
+        let stringArray = testNumberArray.map { (number) -> String in
+          return "No.\(number.description)"
+        }
+        print("stringArray的打印结果:\(stringArray)")
         
         
+        let (day, content) = (30,"今天天气不错")
+        print((day,content))
+        
+        
+        let week = (name : "星期一" , order : 1)
+        
+//        可以很快捷的取出数值
+        let weekName = week.name
+        let weekOrder = week.order
+        
+
     }
     
     override func didReceiveMemoryWarning() {

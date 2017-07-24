@@ -31,7 +31,9 @@ class ImageLoadOperation: Operation {
         get { return _executing }
         set {
             if newValue != _executing {
+                willChangeValue(forKey: "isExecuting")
                 _executing = newValue
+                didChangeValue(forKey: "isExecuting")
             }
         }
     }
@@ -41,7 +43,9 @@ class ImageLoadOperation: Operation {
         get { return _finished }
         set {
             if newValue != _finished {
+                willChangeValue(forKey: "isFinished")
                 _finished = newValue
+                didChangeValue(forKey: "isFinished")
             }
         }
     }

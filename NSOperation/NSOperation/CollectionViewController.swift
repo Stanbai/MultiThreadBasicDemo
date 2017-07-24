@@ -12,7 +12,6 @@ private let reuseIdentifier = "Cell"
 
 class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     let imageLoadQueu = OperationQueue()
-    var items = [UIImage]()
     var imageOps = [(Item, Operation?)]()
     
     
@@ -43,10 +42,6 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        if imageOps.count < 1 {
-            return 1
-        }
         return imageOps.count
     }
     
@@ -86,25 +81,6 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     
     
     
-}
-
-extension CollectionViewController {
-    func loadImages(count: Int, complete: @escaping([UIImage]) -> Void) -> () {
-        var images = [UIImage]()
-        for index in 0...count {
-            if let url = URL(string: "https://placeholdit.imgix.net/~text?txtsize=33&txt=image+\(index + 1)&w=300&h=300") {
-                
-                do {
-                    let imageData = try Data(contentsOf: url)
-                    guard let image = UIImage(data: imageData) else { return }
-                    images.append(image)
-                } catch {
-                    print(error)
-                }
-            }
-        }
-        complete(images)
-    }
 }
 
 
