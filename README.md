@@ -6,4 +6,6 @@ This series demos are about multi-thread. You could read the guide through JianS
 
 
 [iOS多线程系列之一：Operation基础操作,按优先级加载图片](http://www.jianshu.com/p/443a18031366)
+
+
 [iOS多线程系列之二：Operation实例,异步加载CollectionView图片](http://www.jianshu.com/p/2728ae223a5a)
