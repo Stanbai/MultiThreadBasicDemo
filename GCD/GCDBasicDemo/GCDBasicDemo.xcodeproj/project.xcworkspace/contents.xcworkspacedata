@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:NSOperation.xcodeproj">
+      location = "self:GCDBasicDemo.xcodeproj">
    </FileRef>
 </Workspace>

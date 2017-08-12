@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uaN-ww-4bM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GCDBasicDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6FY-o9-wuk">
+                                <rect key="frame" x="10" y="164" width="170" height="30"/>
+                                <state key="normal" title="global Queue + 异步任务"/>
+                                <connections>
+                                    <action selector="globalAsyn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Gm-n1-HDU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESO-6V-6aX">
+                                <rect key="frame" x="204" y="164" width="161" height="30"/>
+                                <state key="normal" title="main Queue + 异步任务"/>
+                                <connections>
+                                    <action selector="mainAsyn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v53-uA-rr7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwR-S7-bYX">
+                                <rect key="frame" x="4" y="204" width="367" height="30"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="异步下载图片,download image in asynchronous mood"/>
+                                <connections>
+                                    <action selector="asynDownloadImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EP4-am-q0v"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6VT-ko-ZrW">
+                                <rect key="frame" x="26" y="284" width="136" height="30"/>
+                                <state key="normal" title="Delay DispatchTime"/>
+                                <connections>
+                                    <action selector="delayProcessDispatchTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WeF-lR-jvg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWT-W9-MZK">
+                                <rect key="frame" x="196" y="284" width="169" height="30"/>
+                                <state key="normal" title="Delay DispatchWallTime "/>
+                                <connections>
+                                    <action selector="delayProcessDispatchWallTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dfr-o6-qFb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Oy-46-Dul">
+                                <rect key="frame" x="10" y="348" width="103" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="dispatch_apply"/>
+                                <connections>
+                                    <action selector="useDispatchApply:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8yh-O2-ly1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJc-rn-PQJ">
+                                <rect key="frame" x="168" y="348" width="134" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Suspend &amp; Resume"/>
+                                <connections>
+                                    <action selector="useDispatchSuspend:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mt0-Vp-RVg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wba-PZ-u50">
+                                <rect key="frame" x="16" y="404" width="103" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="useSemaphore"/>
+                                <connections>
+                                    <action selector="useSemaphore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JWd-bi-KFV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9y-Q9-08t">
+                                <rect key="frame" x="23" y="474" width="88" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="GroupQueue"/>
+                                <connections>
+                                    <action selector="useGroupQueue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sde-RE-d1H"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gwR-S7-bYX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E0s-ut-JT6"/>
+                            <constraint firstItem="6VT-ko-ZrW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="TUZ-hX-tSL"/>
+                            <constraint firstItem="gwR-S7-bYX" firstAttribute="top" secondItem="ESO-6V-6aX" secondAttribute="bottom" constant="10" id="a6j-5X-GMI"/>
+                            <constraint firstAttribute="trailing" secondItem="YWT-W9-MZK" secondAttribute="trailing" constant="10" id="jEN-v1-RYO"/>
+                            <constraint firstItem="6FY-o9-wuk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="nU1-Ne-rCw"/>
+                            <constraint firstAttribute="trailing" secondItem="ESO-6V-6aX" secondAttribute="trailing" constant="10" id="pO7-72-QMA"/>
+                            <constraint firstItem="ESO-6V-6aX" firstAttribute="centerY" secondItem="6FY-o9-wuk" secondAttribute="centerY" id="t2T-0J-uT6"/>
+                            <constraint firstItem="6FY-o9-wuk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="vf9-2w-NDW"/>
+                            <constraint firstItem="6VT-ko-ZrW" firstAttribute="top" secondItem="gwR-S7-bYX" secondAttribute="bottom" constant="50" id="vl4-v0-J9k"/>
+                            <constraint firstItem="YWT-W9-MZK" firstAttribute="centerY" secondItem="6VT-ko-ZrW" secondAttribute="centerY" id="wjd-ih-sqr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="npb-rI-d0D"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="831" y="-602"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9vT-T1-gKZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uaN-ww-4bM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NIu-1V-AJu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="y89-ry-92n"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zDE-HW-3F5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="29.600000000000001" y="-602.24887556221893"/>
+        </scene>
+    </scenes>
+</document>

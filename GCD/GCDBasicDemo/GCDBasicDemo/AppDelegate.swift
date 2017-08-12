@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  NSOperation
+//  GCDBasicDemo
 //
-//  Created by Stan on 2017-07-05.
+//  Created by Stan on 2017-07-26.
 //  Copyright © 2017 stan. All rights reserved.
 //
 
